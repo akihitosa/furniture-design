@@ -1,0 +1,443 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+  margin: auto;
+}
+
+.header_box {}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header_logo {
+  width: 180px;
+  padding: 30px 0;
+
+  @include mq("md") {
+    padding: 30px 0 30px 0;
+  }
+}
+
+.header_logo_link {}
+
+.header_logo_img {}
+
+.openbtn {}
+
+.grid_group {
+  margin-top: 60px;
+}
+
+.about_grid_group {
+  margin-top: 121px;
+}
+
+.products_grid_group {
+  margin-top: 121px;
+}
+
+.item_title {
+  color: black;
+  font-size: 0.875rem;
+  margin-bottom: 30px;
+
+  @include mq("md") {
+    margin-top: 120px;
+    margin-bottom: 30px;
+  }
+}
+
+.datail_item_title {
+  color: black;
+
+  @include mq("md") {
+    margin-top: 120px;
+    margin-bottom: 20px;
+  }
+}
+
+.grid_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0 33px;
+
+  @include mq("md") {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+
+.item {
+  margin-bottom: 39.5px;
+
+  @include mq("md") {
+    margin-bottom: 40.5px;
+  }
+}
+
+.item_img {
+  margin-bottom: 10px;
+}
+
+.item_text {
+  font-size: 0.75rem;
+}
+
+.view_box {
+  text-align: center;
+  margin-bottom: 121px;
+
+  @include mq("md") {
+    margin-bottom: 101px;
+  }
+
+  a {
+    color: black;
+  }
+}
+
+a {
+  display: block;
+  color: black;
+
+}
+
+
+.view_more {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+
+
+.footer {
+  margin-bottom: 20px;
+}
+
+.footer_box {
+  display: flex;
+  justify-content: space-between;
+
+  @include mq("md") {
+    flex-direction: column;
+  }
+}
+
+.footer_sns_link {
+  display: flex;
+
+  li {
+    font-size: 0.75rem;
+  }
+
+  li:not(:last-of-type) {
+    margin-right: 31px;
+  }
+
+  @include mq("md") {
+    margin-bottom: 5px;
+  }
+}
+
+.footer_copylite {
+  font-size: 0.625rem;
+
+  @include mq("md") {
+    margin-bottom: 20px;
+    margin-left: 4px;
+  }
+}
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+  top: 0px;
+  left: -120%;
+  width: 100%;
+  height: 100vh;
+  /*ナビの高さ*/
+  background: rgba(0, 0, 0, 0.8);
+  ;
+  /*動き*/
+  transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive {
+  left: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list {
+  /*ナビの数が増えた場合縦スクロール*/
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  width: 100%;
+  height: 17vh;
+  /*表示する高さ*/
+  transition: all 0.3s;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top: 106px;
+  left: 60px;
+  transform: translate(-50%, -50%);
+  font-size: 0.875rem
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li {}
+
+#g-nav li a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 14px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-size: 0.875rem;
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+
+/*========= ボタンのためのCSS ===============*/
+
+.openbtn_box {
+  z-index: 99999;
+  padding: 30px 0;
+
+  @include mq("md") {
+    padding: 30px 0 10px 0;
+
+  }
+}
+
+.openbtn {}
+
+/*×に変化*/
+.span1 {
+  margin-top: 3px;
+  display: block;
+  transition: all 0.4s;
+  right: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #666;
+  width: 30px;
+}
+
+.span2 {
+  margin-top: 9px;
+  display: block;
+  transition: all 0.4s;
+  right: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #666;
+  width: 30px;
+}
+
+
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+  text-align: center;
+}
+
+.openbtn span:nth-of-type(2) {
+  top: 31px;
+  text-align: center;
+
+}
+
+
+
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  right: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30px;
+}
+
+.openbtn.active span:nth-of-type(2) {
+  top: 30px;
+  right: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30px;
+}
+
+// products -----------------------------------------------------------
+.products_view_box {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 59px;
+  margin: 0 auto;
+  margin-bottom: 123px;
+}
+
+
+// products detail ----------------------------------------------------
+.detail_grid_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 90px;
+  margin-bottom: 126px;
+  font-size: 0.875rem;
+
+  @include mq("md") {
+    display: block;
+    margin-bottom: 105px;
+  }
+}
+
+.datail_item_img {
+  width: 100%;
+}
+
+.detail_text {
+  p {
+    margin-bottom: 30px;
+  }
+}
+
+.detail_text_about {
+  display: flex;
+  flex-wrap: wrap;
+
+  dd {
+    width: 40%;
+  }
+
+  dt {
+    width: 60%;
+  }
+}
+
+// about -------------------------------------------
+.grid_change {
+  grid-template-columns: 1fr 1fr;
+}
+
+
+// company -------------------------------------------
+
+.company_text_box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  @include mq("md") {
+    flex-direction: column;
+  }
+
+  dt {
+    width: 32%;
+    padding: 19.6px 10px;
+
+    @include mq("md") {
+      width: 100%;
+      padding: 0px 10px;
+      margin: 20px 0 9.4px 0;
+    }
+  }
+
+  dt:not(:last-of-type) {
+    border-bottom: 1px solid #DCDBDB;
+
+    @include mq("md") {
+      border-bottom: 0;
+    }
+  }
+
+  dd {
+    width: 50%;
+    padding: 19.6px 0;
+
+    @include mq("md") {
+      width: 100%;
+      padding: 0 0 20px 10px;
+    }
+  }
+
+  dd:not(:last-of-type) {
+    border-bottom: 1px solid #DCDBDB;
+  }
+}
+
+
+/* 横幅を指定するための要素 */
+.map-wrap {
+  max-width: 100%;
+  /* ここに横幅を指定 */
+}
+
+/* Google Mapを囲う要素 */
+.map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 50%;
+
+  /* 比率を4:3に固定 */
+  @include mq("md") {
+    padding-top: 100%;
+  }
+}
+
+/* Google Mapのiframe */
+.map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.index_header_logo {
+  width: 180px;
+  padding: 30px 0;
+
+  @include mq("md") {
+    padding: 30px 0 10px 0;
+  }
+}
+
+.index_grid_box {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0 33px;
+
+  @include mq("md") {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+    margin-top: 61px;
+    gap: 0 20px;
+  }
+}

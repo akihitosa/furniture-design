@@ -1,0 +1,552 @@
+@charset "UTF-8";
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+
+a[href^="tel:"] {
+  pointer-events: none;
+}
+@media screen and (max-width: 900px) {
+  a[href^="tel:"] {
+    pointer-events: auto;
+  }
+}
+
+a {
+  transition: opacity 0.3s;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+.inner {
+  max-width: 1360px;
+  padding: 0 40px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+input[type=submit],
+input[type=button],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+  margin: auto;
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_logo {
+  width: 180px;
+  padding: 30px 0;
+}
+@media screen and (max-width: 900px) {
+  .header_logo {
+    padding: 30px 0 30px 0;
+  }
+}
+
+.grid_group {
+  margin-top: 60px;
+}
+
+.about_grid_group {
+  margin-top: 121px;
+}
+
+.products_grid_group {
+  margin-top: 121px;
+}
+
+.item_title {
+  color: black;
+  font-size: 0.875rem;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 900px) {
+  .item_title {
+    margin-top: 120px;
+    margin-bottom: 30px;
+  }
+}
+
+.datail_item_title {
+  color: black;
+}
+@media screen and (max-width: 900px) {
+  .datail_item_title {
+    margin-top: 120px;
+    margin-bottom: 20px;
+  }
+}
+
+.grid_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0 33px;
+}
+@media screen and (max-width: 900px) {
+  .grid_box {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+
+.item {
+  margin-bottom: 39.5px;
+}
+@media screen and (max-width: 900px) {
+  .item {
+    margin-bottom: 40.5px;
+  }
+}
+
+.item_img {
+  margin-bottom: 10px;
+}
+
+.item_text {
+  font-size: 0.75rem;
+}
+
+.view_box {
+  text-align: center;
+  margin-bottom: 121px;
+}
+@media screen and (max-width: 900px) {
+  .view_box {
+    margin-bottom: 101px;
+  }
+}
+.view_box a {
+  color: black;
+}
+
+a {
+  display: block;
+  color: black;
+}
+
+.view_more {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.footer {
+  margin-bottom: 20px;
+}
+
+.footer_box {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .footer_box {
+    flex-direction: column;
+  }
+}
+
+.footer_sns_link {
+  display: flex;
+}
+.footer_sns_link li {
+  font-size: 0.75rem;
+}
+.footer_sns_link li:not(:last-of-type) {
+  margin-right: 31px;
+}
+@media screen and (max-width: 900px) {
+  .footer_sns_link {
+    margin-bottom: 5px;
+  }
+}
+
+.footer_copylite {
+  font-size: 0.625rem;
+}
+@media screen and (max-width: 900px) {
+  .footer_copylite {
+    margin-bottom: 20px;
+    margin-left: 4px;
+  }
+}
+
+/*========= ナビゲーションのためのCSS ===============*/
+#g-nav {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+  top: 0px;
+  left: -120%;
+  width: 100%;
+  height: 100vh;
+  /*ナビの高さ*/
+  background: rgba(0, 0, 0, 0.8);
+  /*動き*/
+  transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive {
+  left: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list {
+  /*ナビの数が増えた場合縦スクロール*/
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  width: 100%;
+  height: 17vh;
+  /*表示する高さ*/
+  transition: all 0.3s;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top: 106px;
+  left: 60px;
+  transform: translate(-50%, -50%);
+  font-size: 0.875rem;
+}
+
+/*リストのレイアウト設定*/
+#g-nav li a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 14px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-size: 0.875rem;
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn_box {
+  z-index: 99999;
+  padding: 30px 0;
+}
+@media screen and (max-width: 900px) {
+  .openbtn_box {
+    padding: 30px 0 10px 0;
+  }
+}
+
+/*×に変化*/
+.span1 {
+  margin-top: 3px;
+  display: block;
+  transition: all 0.4s;
+  right: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #666;
+  width: 30px;
+}
+
+.span2 {
+  margin-top: 9px;
+  display: block;
+  transition: all 0.4s;
+  right: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #666;
+  width: 30px;
+}
+
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+  text-align: center;
+}
+
+.openbtn span:nth-of-type(2) {
+  top: 31px;
+  text-align: center;
+}
+
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  right: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30px;
+}
+
+.openbtn.active span:nth-of-type(2) {
+  top: 30px;
+  right: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30px;
+}
+
+.products_view_box {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 59px;
+  margin: 0 auto;
+  margin-bottom: 123px;
+}
+
+.detail_grid_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 90px;
+  margin-bottom: 126px;
+  font-size: 0.875rem;
+}
+@media screen and (max-width: 900px) {
+  .detail_grid_box {
+    display: block;
+    margin-bottom: 105px;
+  }
+}
+
+.datail_item_img {
+  width: 100%;
+}
+
+.detail_text p {
+  margin-bottom: 30px;
+}
+
+.detail_text_about {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail_text_about dd {
+  width: 40%;
+}
+.detail_text_about dt {
+  width: 60%;
+}
+
+.grid_change {
+  grid-template-columns: 1fr 1fr;
+}
+
+.company_text_box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 900px) {
+  .company_text_box {
+    flex-direction: column;
+  }
+}
+.company_text_box dt {
+  width: 32%;
+  padding: 19.6px 10px;
+}
+@media screen and (max-width: 900px) {
+  .company_text_box dt {
+    width: 100%;
+    padding: 0px 10px;
+    margin: 20px 0 9.4px 0;
+  }
+}
+.company_text_box dt:not(:last-of-type) {
+  border-bottom: 1px solid #DCDBDB;
+}
+@media screen and (max-width: 900px) {
+  .company_text_box dt:not(:last-of-type) {
+    border-bottom: 0;
+  }
+}
+.company_text_box dd {
+  width: 50%;
+  padding: 19.6px 0;
+}
+@media screen and (max-width: 900px) {
+  .company_text_box dd {
+    width: 100%;
+    padding: 0 0 20px 10px;
+  }
+}
+.company_text_box dd:not(:last-of-type) {
+  border-bottom: 1px solid #DCDBDB;
+}
+
+/* 横幅を指定するための要素 */
+.map-wrap {
+  max-width: 100%;
+  /* ここに横幅を指定 */
+}
+
+/* Google Mapを囲う要素 */
+.map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 50%;
+  /* 比率を4:3に固定 */
+}
+@media screen and (max-width: 900px) {
+  .map {
+    padding-top: 100%;
+  }
+}
+
+/* Google Mapのiframe */
+.map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.index_header_logo {
+  width: 180px;
+  padding: 30px 0;
+}
+@media screen and (max-width: 900px) {
+  .index_header_logo {
+    padding: 30px 0 10px 0;
+  }
+}
+
+.index_grid_box {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0 33px;
+}
+@media screen and (max-width: 900px) {
+  .index_grid_box {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+    margin-top: 61px;
+    gap: 0 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
